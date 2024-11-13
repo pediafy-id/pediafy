@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import ColorModeToggleWrapper from './src/theme/ColorModeToggle';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -58,13 +59,34 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: false,
+    },
+    announcementBar: {
+      id: 'support_us',
+      content:
+        'We are looking to revamp our docs, please fill <a target="_blank" rel="noopener noreferrer" href="#">this survey</a>',
+      backgroundColor: '#fafbfc',
+      textColor: '#091E42',
+      isCloseable: false,
+    },
     navbar: {
-      title: 'Pediafy',
+      hideOnScroll: true,
+      title: 'pediafy',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'pediafy Logo',
+        src: 'img/0.svg',
+        srcDark: 'img/1.svg',
+        className: 'custom-navbar-logo-class',
       },
       items: [
+        {
+          type: 'html',
+          position: 'right',
+          value: '<button>Give feedback</button>',
+        },
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
@@ -91,6 +113,8 @@ const config: Config = {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
           position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         },
       ],
     },
@@ -101,8 +125,29 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              html: `
+                  <a href="https://www.github.com" target="_blank" rel="noreferrer noopener" aria-label="Deploys by Netlify">
+                    <img src="https://www.github.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
+                  </a>
+                `,
+            },
+            {
+              label: 'Documentation',
+              to: '/docs/Documentation/intro',
+            },
+            {
+              label: 'Shopee',
+              to: '/docs/Shopee/create-a-page/',
+            },
+            {
+              label: 'Tokopedia',
+              to: '/docs/Tokopedia/manage-docs-versions/',
+            },
+            {
+            html: `
+              <a href="https://www.netlify.com" target="_blank" rel="noreferrer noopener" aria-label="Deploys by Netlify">
+                <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
+              </a>`,
             },
           ],
         },
