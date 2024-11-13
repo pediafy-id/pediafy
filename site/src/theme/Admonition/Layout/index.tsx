@@ -1,14 +1,50 @@
-import React from 'react';
-import Layout from '@theme-original/Admonition/Layout';
-import type LayoutType from '@theme/Admonition/Layout';
-import type {WrapperProps} from '@docusaurus/types';
+import React, {type ReactNode} from 'react';
+import clsx from 'clsx';
+import {ThemeClassNames} from '@docusaurus/theme-common';
 
-type Props = WrapperProps<typeof LayoutType>;
+import type {Props} from '@theme/Admonition/Layout';
 
-export default function LayoutWrapper(props: Props): JSX.Element {
+import styles from './styles.module.css';
+
+function AdmonitionContainer({
+  type,
+  className,
+  children,
+}: Pick<Props, 'type' | 'className'> & {children: ReactNode}) {
   return (
-    <>
-      <Layout {...props} />
-    </>
+    <div
+      className={clsx(
+        ThemeClassNames.common.admonition,
+        ThemeClassNames.common.admonitionType(type),
+        styles.admonition,
+        className,
+      )}>
+      {children}
+    </div>
+  );
+}
+
+function AdmonitionHeading({icon, title}: Pick<Props, 'icon' | 'title'>) {
+  return (
+    <div className={styles.admonitionHeading}>
+      <span className={styles.admonitionIcon}>{icon}</span>
+      {title}
+    </div>
+  );
+}
+
+function AdmonitionContent({children}: Pick<Props, 'children'>) {
+  return children ? (
+    <div className={styles.admonitionContent}>{children}</div>
+  ) : null;
+}
+
+export default function AdmonitionLayout(props: Props): JSX.Element {
+  const {type, icon, title, children, className} = props;
+  return (
+    <AdmonitionContainer type={type} className={className}>
+      {title || icon ? <AdmonitionHeading title={title} icon={icon} /> : null}
+      <AdmonitionContent>{children}</AdmonitionContent>
+    </AdmonitionContainer>
   );
 }

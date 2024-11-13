@@ -1,14 +1,39 @@
 import React from 'react';
-import Logo from '@theme-original/Footer/Logo';
-import type LogoType from '@theme/Footer/Logo';
-import type {WrapperProps} from '@docusaurus/types';
+import clsx from 'clsx';
+import Link from '@docusaurus/Link';
+import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
+import type {Props} from '@theme/Footer/Logo';
 
-type Props = WrapperProps<typeof LogoType>;
+import styles from './styles.module.css';
 
-export default function LogoWrapper(props: Props): JSX.Element {
+function LogoImage({logo}: Props) {
+  const {withBaseUrl} = useBaseUrlUtils();
+  const sources = {
+    light: withBaseUrl(logo.src),
+    dark: withBaseUrl(logo.srcDark ?? logo.src),
+  };
   return (
-    <>
-      <Logo {...props} />
-    </>
+    <ThemedImage
+      className={clsx('footer__logo', logo.className)}
+      alt={logo.alt}
+      sources={sources}
+      width={logo.width}
+      height={logo.height}
+      style={logo.style}
+    />
+  );
+}
+
+export default function FooterLogo({logo}: Props): JSX.Element {
+  return logo.href ? (
+    <Link
+      href={logo.href}
+      className={styles.footerLogoLink}
+      target={logo.target}>
+      <LogoImage logo={logo} />
+    </Link>
+  ) : (
+    <LogoImage logo={logo} />
   );
 }

@@ -51,7 +51,7 @@ This is a **dangerous situation** you need to be aware of.
 
 :::
 
-:::note This is a _custom title_
+:::info This is a _custom title_
 
 And you can add images as well.
 
