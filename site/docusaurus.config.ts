@@ -125,13 +125,6 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              html: `
-                  <a href="https://www.github.com" target="_blank" rel="noreferrer noopener" aria-label="Deploys by Netlify">
-                    <img src="https://www.github.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
-                  </a>
-                `,
-            },
-            {
               label: 'Documentation',
               to: '/docs/Documentation/intro',
             },

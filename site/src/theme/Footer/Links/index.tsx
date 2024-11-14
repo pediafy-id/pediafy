@@ -1,14 +1,14 @@
 import React from 'react';
+import Links from '@theme-original/Footer/Links';
+import type LinksType from '@theme/Footer/Links';
+import type {WrapperProps} from '@docusaurus/types';
 
-import {isMultiColumnFooterLinks} from '@docusaurus/theme-common';
-import FooterLinksMultiColumn from '@theme/Footer/Links/MultiColumn';
-import FooterLinksSimple from '@theme/Footer/Links/Simple';
-import type {Props} from '@theme/Footer/Links';
+type Props = WrapperProps<typeof LinksType>;
 
-export default function FooterLinks({links}: Props): JSX.Element {
-  return isMultiColumnFooterLinks(links) ? (
-    <FooterLinksMultiColumn columns={links} />
-  ) : (
-    <FooterLinksSimple links={links} />
+export default function LinksWrapper(props: Props): JSX.Element {
+  return (
+    <>
+      <Links {...props} />
+    </>
   );
 }

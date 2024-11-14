@@ -1,29 +1,14 @@
 import React from 'react';
+import LinkItem from '@theme-original/Footer/LinkItem';
+import type LinkItemType from '@theme/Footer/LinkItem';
+import type {WrapperProps} from '@docusaurus/types';
 
-import Link from '@docusaurus/Link';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import isInternalUrl from '@docusaurus/isInternalUrl';
-import IconExternalLink from '@theme/Icon/ExternalLink';
-import type {Props} from '@theme/Footer/LinkItem';
+type Props = WrapperProps<typeof LinkItemType>;
 
-export default function FooterLinkItem({item}: Props): JSX.Element {
-  const {to, href, label, prependBaseUrlToHref, ...props} = item;
-  const toUrl = useBaseUrl(to);
-  const normalizedHref = useBaseUrl(href, {forcePrependBaseUrl: true});
-
+export default function LinkItemWrapper(props: Props): JSX.Element {
   return (
-    <Link
-      className="footer__link-item"
-      {...(href
-        ? {
-            href: prependBaseUrlToHref ? normalizedHref : href,
-          }
-        : {
-            to: toUrl,
-          })}
-      {...props}>
-      {label}
-      {href && !isInternalUrl(href) && <IconExternalLink />}
-    </Link>
+    <>
+      <LinkItem {...props} />
+    </>
   );
 }
