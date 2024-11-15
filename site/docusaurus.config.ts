@@ -9,10 +9,10 @@ const config: Config = {
   title: 'Pediafy',
   tagline: 'Pediafy are cool',
   favicon: 'img/favicon.ico',
-  url: 'https://pediafy-id.github.io',
+  url: 'https://pediafy-id.github.io/pediafy/',
   baseUrl: '/',
   deploymentBranch: 'gh-pages',
-  organizationName: 'pediafy-id.github.io', // Usually your GitHub org/user name.
+  organizationName: 'pediafy-id', // Usually your GitHub org/user name.
   projectName: 'pediafy', // Usually your repo name.
   trailingSlash: false,
   onBrokenLinks: 'throw',
