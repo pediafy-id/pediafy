@@ -1,10 +1,11 @@
 // An array of links for navigation bar
 const navBarLinks = [
   { name: "Home", url: "/" },
-  { name: "Products", url: "/products" },
   { name: "Services", url: "/services" },
-  { name: "Blog", url: "/blog" },
+  { name: "Digital Products", url: "/products" },
+  { name: "Articles", url: "/blog" },
   { name: "Contact", url: "/contact" },
+  { name: "Docs", url: "#" },
 ];
 // An array of links for footer
 const footerLinks = [
@@ -17,12 +18,21 @@ const footerLinks = [
     ],
   },
   {
-    section: "Company",
+    section: "Profiles",
     links: [
       { name: "About us", url: "#" },
       { name: "Blog", url: "/blog" },
       { name: "Careers", url: "#" },
       { name: "Customers", url: "#" },
+    ],
+  },
+  {
+    section: "Resources",
+    links: [
+      { name: "Documentation", url: "#" },
+      { name: "Articles", url: "/blog" },
+      { name: "Terms", url: "#" },
+      { name: "Privacy", url: "#" },
     ],
   },
 ];

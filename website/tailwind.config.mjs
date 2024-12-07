@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import colors from 'tailwindcss/colors';
+import colors, { green } from 'tailwindcss/colors';
 export default {
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
@@ -10,8 +10,9 @@ export default {
     colors: {
       transparent: "transparent",
       current: "currentColor",
-      black: "#000000",
-      white: "#ffffff",
+      black: colors.black,
+      white: colors.white,
+      green: colors.green,
       gray: colors.gray,
       indigo: colors.indigo,
       neutral: colors.neutral,  // Used mainly for text color

@@ -7,7 +7,7 @@ import starlight from "@astrojs/starlight";
 // https://astro.build/config
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
-  site: "https://screwfast.uk",
+  site: "https://pediafy.com",
   image: {
     domains: ["images.unsplash.com"],
   },
@@ -34,7 +34,7 @@ export default defineConfig({
       },
     }),
     starlight({
-      title: "ScrewFast Docs",
+      title: "Pediafy Docs",
       defaultLocale: "root",
       // https://github.com/withastro/starlight/blob/main/packages/starlight/CHANGELOG.md
       // If no Astro and Starlight i18n configurations are provided, the built-in default locale is used in Starlight and a matching Astro i18n configuration is generated/used.
@@ -51,6 +51,8 @@ export default defineConfig({
         fa: { label: "Persian", lang: "fa", dir: "rtl" },
         fr: { label: "Français", lang: "fr" },
         ja: { label: "日本語", lang: "ja" },
+        indonesia: { label: "Bahasa Indonesia", lang: "id" },
+        ara: { label: "اَلْعَرَبِيَّةُ", lang: "ara" },
         "zh-cn": { label: "简体中文", lang: "zh-CN" },
       },
       // https://starlight.astro.build/guides/sidebar/
@@ -63,6 +65,7 @@ export default defineConfig({
             fa: "راهنمای شروع سریع",
             fr: "Guides de Démarrage Rapide",
             ja: "クイックスタートガイド",
+            idonesia: "Pelajari",
             "zh-cn": "快速入门指南",
           },
           autogenerate: { directory: "guides" },
@@ -100,14 +103,14 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:image",
-            content: "https://screwfast.uk" + "/social.webp",
+            content: "https://pediafy.com" + "/social.webp",
           },
         },
         {
           tag: "meta",
           attrs: {
             property: "twitter:image",
-            content: "https://screwfast.uk" + "/social.webp",
+            content: "https://pediafy.com" + "/social.webp",
           },
         },
       ],
