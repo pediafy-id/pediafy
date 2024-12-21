@@ -10,16 +10,16 @@ export default defineConfig({
   image: {
     domains: ["images.unsplash.com"],
   },
-  // i18n: {
-  //   defaultLocale: "en",
-  //   locales: ["en", "fr"],
-  //   fallback: {
-  //     fr: "en",
-  //   },
-  //   routing: {
-  //     prefixDefaultLocale: false,
-  //   },
-  // },
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "idn"],
+    fallback: {
+      idn: "en",
+    },
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   prefetch: true,
   integrations: [
     tailwind(),
@@ -28,7 +28,7 @@ export default defineConfig({
         defaultLocale: "en", // All urls that don't contain `fr` after `https://screwfast.uk/` will be treated as default locale, i.e. `en`
         locales: {
           en: "en", // The `defaultLocale` value must present in `locales` keys
-          fr: "fr",
+          idn: "idn",
         },
       },
     }),
