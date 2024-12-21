@@ -7,9 +7,9 @@ import { getCollection } from "astro:content";
 
 // Use `getStaticPaths` to generate static routes for generated pages on build
 export async function getStaticPaths() {
-  const insightPosts = await getCollection("insights", ({ id }) => id.startsWith("fr/"));
+  const insightPosts = await getCollection("insights", ({ id }) => id.startsWith("id/"));
   return insightPosts.map((post) => {
-    const slugWithoutLang = post.slug.replace(/^fr\//, ''); // Remove the "fr/" prefix
+    const slugWithoutLang = post.slug.replace(/^idn\//, ''); // Remove the "id/" prefix
     return {
       params: { lang: 'fr', slug: slugWithoutLang },
       props: { post },

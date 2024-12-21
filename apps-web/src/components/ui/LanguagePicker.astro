@@ -33,7 +33,7 @@ import Icon from "./icons/Icon.astro";
       Object.entries(languages).map(([lang, label]) => (
         <a
           class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-neutral-800 hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-          href={`/${lang === "en" ? "" : lang}`}
+          href={`/${lang === "en" ? "idn" : lang}`}
         >
           {label}
         </a>
@@ -50,9 +50,9 @@ import Icon from "./icons/Icon.astro";
 
 <script>
   // Type alias for supported languages
-  type TLanguage = "en" | "fr";
+  type TLanguage = "en" | "idn";
   // array of supported languages
-  const languages: TLanguage[] = ["en", "fr"];
+  const languages: TLanguage[] = ["en", "idn"];
 
   document.addEventListener("DOMContentLoaded", function () {
     const languageLinks = document.querySelectorAll(".hs-dropdown-menu a");
